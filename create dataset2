@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define m1 1000000
+
+
+int main()
+{
+
+    FILE *fPtr = freopen("dataset2.txt", "w", stdout);
+
+    if (!fPtr) 
+    {
+        printf("檔案建立失敗...\n");
+        exit(1);
+    }
+ 
+	srand(time(0));
+ 
+	for(int i=0;i<m1;i++)
+    {
+        for(int j=0;j<100;j++)
+        {
+
+            int s=rand()%2;
+            if(s==1)
+            {
+                printf("%c",'A'+rand()%26);
+            }
+            else
+            {
+                printf("%c",'a'+rand()%26);
+            }
+        }    
+        printf("\n");
+    }
+    
+    fclose(fPtr);  
+    return 0;
+}
+
