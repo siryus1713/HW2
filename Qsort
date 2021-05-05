@@ -93,7 +93,6 @@ void str_sort()
     int str_partition(char str[max][102], int low, int high)
     {
         char string[100];
-        //memset(string,'\0',sizeof(string));
         strcpy(string, str[high]);
 
         int i = low - 1;
