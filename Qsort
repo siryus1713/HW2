@@ -60,6 +60,12 @@ void int_sort()
 
     unsigned long dif = 1000000 * (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec);
     printf("qsort for int is %ld\n", dif);
+
+    freopen("Qsort_int.txt","w",stdout);
+    for(int i=0;i<max;i++)
+    {
+        printf("%d %d\n",i,a[i]);
+    }
 }
 
 char str[max][102];
@@ -124,11 +130,21 @@ void str_sort()
     gettimeofday(&end, NULL);
     unsigned long dif = 1000000 * (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec);
     printf("qsort for str is %ld\n", dif);
+
+    freopen("Qsort_str.txt","w",stdout);
+
+    for(int i=0;i<max;i++)
+    {
+        printf("%s",str[i]);
+    }
+
+ 
 }
 
 int main()
 {
     int_sort();
+
     str_sort();
     return 0;
 }
