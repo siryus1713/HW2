@@ -39,10 +39,10 @@ int main()
         scanf("%100s",str[i]);
         
     gettimeofday(&start, NULL);
-    HeapSort(a);
+    HeapSort(str);
     gettimeofday(&end, NULL);
     
     long diff = max * (end.tv_sec - start.tv_sec) + end.tv_usec - start.tv_usec;
-    printf("heapSort for int is %ld\n", diff);
+    printf("heapSort for strings is %ld\n", diff);
        
 }
