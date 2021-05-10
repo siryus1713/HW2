@@ -1,14 +1,12 @@
+#include <stdlib.h>
+
 #define max 1000000
 
 void int_swap(int *a, int *b);
-  
-void int_sort();
 
 int int_partition(int arr[], int low, int high);
 
 void int_quicksort(int arr[], int low, int high);
-
-void str_sort();
 
 void str_swap(char *str1_ptr, char *str2_ptr);
    
