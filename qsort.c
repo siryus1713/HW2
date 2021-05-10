@@ -5,27 +5,12 @@
 
 #define max 1000000
 
- void int_swap(int *a, int *b)
+    void int_swap(int *a, int *b)
     {
         int t = *a;
         *a = *b;
         *b = t;
     }
-
-void int_sort()
-{
-
-    int *a = malloc(sizeof(int) * max);
-    int cnt = 0;
-    FILE *fPtr = fopen("dataset1.txt", "r");
-    char buffer[100];
-
-    while (fgets(buffer, 100, fPtr))
-    {
-        a[cnt++] = atoi(buffer);
-    }
-
-   
 
     int int_partition(int arr[], int low, int high)
     {
@@ -54,38 +39,8 @@ void int_sort()
         }
     }
 
-    gettimeofday(&start, NULL);
-    int_quicksort(a, 0, max - 1);
-    gettimeofday(&end, NULL);
-
-    unsigned long dif = 1000000 * (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec);
-    printf("qsort for int is %ld\n", dif);
-
-    freopen("Qsort_int.txt","w",stdout);
-    for(int i=0;i<max;i++)
-    {
-        printf("%d %d\n",i,a[i]);
-    }
-}
 
 char str[max][102];
-
-void str_sort()
-{
-    ////for time saving
-    struct timeval start;
-    struct timeval end;
-
-    ////read the strings
-    FILE *fp;
-    fp = fopen("dataset2.txt", "r");
-
-    int ctr = 0;
-    while (fgets(str[ctr], 102, fp) != NULL)
-    {
-        ctr++;
-    }
-    fclose(fp);
 
     ////swap two string
     void str_swap(char *str1_ptr, char *str2_ptr)
@@ -124,7 +79,3 @@ void str_sort()
             str_quicksort(str, pi + 1, high);
         }
     }
-
- 
-}
-
