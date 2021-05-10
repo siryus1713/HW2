@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <qsort.h>
+#include "qsort.h"
 
 #define max 1000000
 
