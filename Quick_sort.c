@@ -26,8 +26,6 @@ int main()
     
     //////////////////////////str part
     
-    struct timeval start;
-    struct timeval end;
     char str[max][102];
     
     freopen("dataset2.txt","r",stdin);
