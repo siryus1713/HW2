@@ -21,7 +21,7 @@ char str[max][102];
         int right = 2 * root + 1;
         int largest;
 
-        if (left <= length && array[left] > array[root])
+        if (left <= length && array[left] > array[root])//比較子節點跟父節點大小
         {
             largest = left;
         }
@@ -34,16 +34,16 @@ char str[max][102];
             largest = right;
         }
 
-        if (largest != root)
+        if (largest != root)//如果最大的不是跟節點就交換再做一次調整
         {
             swap(&array[largest], &array[root]);
             maxHeapify(array, largest, length);
         }
     }
 
-    void BuildmaxHeap(int *arr)
+    void BuildmaxHeap(int *arr)//建立一個maxheap
     {
-        for (int i = (max + 1) / 2; i >= 1; i--)
+        for (int i = (max + 1) / 2; i >= 1; i--)//i從最下面有可能有子節點的地方開始
         {
             maxHeapify(arr, i, max);
         }
@@ -53,7 +53,7 @@ char str[max][102];
     {
         BuildmaxHeap(array);
         int size = max;
-        for (int i = size; i >= 2; i--)
+        for (int i = size; i >= 2; i--)//交換 heap 的 root 與最後一個 node，縮小 heap 的範圍
         {
             swap(&array[1], &array[i]);
             size--;
