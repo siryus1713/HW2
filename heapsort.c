@@ -98,16 +98,14 @@ char str[max][102];
         }
     }
 
-    void BuildmaxHeap(char str[max][102])
-    {
-        for (int i = (max + 1) / 2; i >= 1; i--)
-        {
-            maxHeapify(str, i, max);
-        }
-    }
 
     void str_heapsort(char str[max][102])
     {
+           for (int i = (max + 1) / 2; i >= 1; i--)
+        {
+            maxHeapify(str, i, max);
+        }
+        
         BuildmaxHeap(str);
         int size = max;
         for (int i = size; i >= 2; i--)
